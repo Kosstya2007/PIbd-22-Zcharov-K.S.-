@@ -1,17 +1,19 @@
-namespace PIbd_22_Zacharov.K.S_OTP
+using Autofac;
+using Pibd_22_Zacharov.K.S_OTP;
+
+
+namespace Pibd_22_Zacharov.K.S_OTP;
+
+internal static class Program
 {
-    internal static class Program
+    [STAThread]
+    private static void Main()
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
-        }
+        ApplicationConfiguration.Initialize();
+
+        var container = ContainerConfigurator.Configure();
+        using var scope = container.BeginLifetimeScope();
+
+        Application.Run(scope.Resolve<MainForm>());
     }
 }

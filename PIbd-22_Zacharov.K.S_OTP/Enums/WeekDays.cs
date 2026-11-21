@@ -1,5 +1,4 @@
-﻿namespace AirlineAccounting;
-
+﻿namespace Pibd_22_Zacharov.K.S_OTP;
 [Flags]
 public enum WeekDays
 {

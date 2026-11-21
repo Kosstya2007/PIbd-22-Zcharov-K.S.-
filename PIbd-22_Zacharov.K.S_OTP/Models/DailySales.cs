@@ -1,4 +1,4 @@
-﻿namespace AirlineAccounting;
+﻿namespace Pibd_22_Zacharov.K.S_OTP;
 
 public class DailySales
 {
